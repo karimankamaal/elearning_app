@@ -29,6 +29,14 @@ import heroimage3 from "./heroimage3.svg";
 import welcome1 from "./welcome1.svg"
 import welcome2 from "./welcome2.svg"
 import vid from "./videoplayback.mp4"
+import inst1 from "./Inst1.png"
+import inst2 from "./Inst2.png"
+import inst3 from "./Inst3.png"
+import inst4 from "./Inst4.png"
+import course1 from "./course1.png"
+import prof1 from "./prof1.png"
+import course2 from "./course2.png"
+import prof2 from "./prof2.png"
 export {
   airbnb,
   bill,
@@ -61,4 +69,12 @@ export {
   welcome1,
   welcome2,
   vid,
+  inst1,
+  inst2,
+  inst3,
+  inst4,
+  course1,
+  prof1,
+  course2,
+  prof2
 };

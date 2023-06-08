@@ -1,25 +1,36 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { close, logo, menu } from '../assets2';
 import { navLinks } from '../constants';
 
-const Navbar = () => {
-  const [active, setActive] = useState('');
+const Navbar = ({ activeTitle }) => {
   const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavLinkClick = (id) => {
+    if (id === 'home') {
+      navigate('/');
+    } else {
+      navigate(id);
+    }
+    setToggle(false);
+  };
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        {navLinks.map((nav, index) => (
+        {navLinks.map((nav) => (
           <li
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] mr-10 ${
-              active === nav.title ? 'text-mygreen' : 'text-myblack'
-            } `}
-            onClick={() => setActive(nav.title)}
+              activeTitle === nav.title ? 'text-mygreen' : 'text-myblack'
+            }`}
+            onClick={() => handleNavLinkClick(nav.id)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <Link to={nav.id}>{nav.title}</Link>
           </li>
         ))}
         <li className="font-poppins font-normal cursor-pointer ml-4">
@@ -43,15 +54,15 @@ const Navbar = () => {
           className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex-col justify-end items-center flex-1">
-            {navLinks.map((nav, index) => (
+            {navLinks.map((nav) => (
               <li
                 key={nav.id}
                 className={`font-poppins font-normal cursor-pointer text-[16px] ${
-                  active === nav.title ? 'text-red' : 'text-black'
-                } ${index === navLinks.length - 1 ? 'mr-0' : 'mb-4'}`}
-                onClick={() => setActive(nav.title)}
+                  activeTitle === nav.title ? 'text-red' : 'text-black'
+                } ${nav.id === navLinks[navLinks.length - 1].id ? 'mr-0' : 'mb-4'}`}
+                onClick={() => handleNavLinkClick(nav.id)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <Link to={nav.id}>{nav.title}</Link>
               </li>
             ))}
             <li className="font-poppins font-normal cursor-pointer">

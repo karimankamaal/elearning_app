@@ -15,10 +15,10 @@ const Welcome = () => {
       <div className="flex-1 flex flex-col justify-center translate-x-[20%] translate-y-[-10%]">
   <h2 className="text-myorange text-lg">ABOUT US</h2>
   <h1 className="text-myblack text-3xl mt-5 mb-5 w-3/4 font-bold">Welcome to Online Class with Dr. Ahmed Mohommed</h1>
-  <p className="text-myblack mt-4 w-3/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt ante vel nisl semper fringilla. Proin in lectus ut nunc ultrices sollicitudin eget nec mi. Phasellus et magna orci. Mauris id sem sit amet enim vulputate fringilla. Curabitur ultrices nunc vel turpis tincidunt semper.</p>
+  <p className="text-myblack mt-4 mb-5 w-3/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt ante vel nisl semper fringilla. Proin in lectus ut nunc ultrices sollicitudin eget nec mi. Phasellus et magna orci. Mauris id sem sit amet enim vulputate fringilla. Curabitur ultrices nunc vel turpis tincidunt semper.</p>
   <div className="flex items-center  mt-4">
       <img src={star} alt="Star" className="w-4 h-4" />
-      <p className="text-myblack ">em ipsum dolor sit amet, consectetur adip </p>
+      <p className="text-myblack ml-2">em ipsum dolor sit amet, consectetur adip </p>
     </div>
     <div className="flex items-center  mt-2">
       <img src={star} alt="Star" className="w-4 h-4" />
